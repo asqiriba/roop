@@ -5,6 +5,7 @@ That's it, that's the software. You can watch some demos [here](https://drive.go
 ![demo-gif](demo.gif)
 
 ## Disclaimer
+
 Better deepfake software than this already exist, this is just a hobby project I created to learn about AI. Users must get consent from the concerned people before using their face and must not hide the fact that it is a deepfake when posting content online. I am not responsible for malicious behaviour of end-users.
 
 To prevent misuse, it has a built-in check which prevents the program from working on inappropriate media.
@@ -20,6 +21,7 @@ There are two types of installations: basic and gpu-powered.
 - **GPU:** If you have a good GPU and are ready for solving any software issues you may face, you can enable GPU which is wayyy faster. To do this, first follow the basic install instructions given above and then follow GPU-specific instructions [here](https://github.com/s0md3v/roop/wiki/2.-GPU-Acceleration).
 
 ## How do I use it?
+
 > Note: When you run this program for the first time, it will download some models ~300MB in size.
 
 Executing `python run.py` command will launch this window:
@@ -51,12 +53,29 @@ options:
 
 Looking for a CLI mode? Using the -f/--face argument will make the program in cli mode.
 
+### Using Docker
+
+If you are having trouble installing the software, you can use the docker image. If you are on an Unix-based system, you can use the following command to run the software:
+
+```sh
+make run
+```
+
+Or just call the docker command directly:
+
+```sh
+docker build . -t roop
+docker run -it --rm --gpus all roop
+```
+
 ## Future plans
+
 - [ ] Improve the quality of faces in results
 - [ ] Replace a selective face throughout the video
 - [ ] Support for replacing multiple faces
 
 ## Credits
+
 - [ffmpeg](https://ffmpeg.org/): for making video related operations easy
 - [deepinsight](https://github.com/deepinsight): for their [insightface](https://github.com/deepinsight/insightface) project which provided a well-made library and models.
 - and all developers behind libraries used in this project.
